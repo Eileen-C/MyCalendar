@@ -1,0 +1,42 @@
+#todayInfo{
+    width: 34%;
+    min-height: 100vh;
+}
+
+#todayInfo h1{
+    font-size: 6.8vh;
+    font-weight: 600;
+    margin: 4vh 0;
+}
+
+#app-name-landscape{
+    font-size: 6.2vh;
+    padding: 9vh 0vh 1vh;
+    border-bottom: 1px solid;
+}
+
+#cur-year{
+    font-size: 6vh;
+    font-weight: 300;
+    margin: 0 0 3vh;
+    padding: 3vh;
+}
+
+#theme-landscape{
+    display: block;
+    padding: 1.8vh 4.2vh;
+    color: #FEFDFD;
+    font-size: 2.4vh;
+}
+
+#theme-landscape:hover{
+    background: #FFFFFF;
+    opacity: 0.4;
+    color: #000000;
+}
+
+@media (orientation: landscape){
+    #todayInfo{
+        clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    }
+  }  

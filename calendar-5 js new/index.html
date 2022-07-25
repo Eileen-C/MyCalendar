@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eileen">
+    <meta name="keywords" content="learn,html5,css">
+    <meta name="robots" content="index,follow">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/icon1.png" type="image/png" sizes="72x72">
+    <title>My Calendar-5 new</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/todayInfo.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+    <link rel="stylesheet" href="./css/moddal.css">
+    <link rel="stylesheet" href="./css/portrait.css">
+    <script src="https://kit.fontawesome.com/e45ac9a14a.js" crossorigin="anonymous"></script>   
+    <style media="screen"></style>
+
+</head>
+<body>
+    <!-- 左欄 今日資訊 -->
+    <div id="todayInfo" class="todayColor default-cursor">
+        <h1 id="app-name-landscape" class="off-color text-center">My Calendar</h1>
+        <h2 id="cur-year" class="text-center">2022</h2>
+        <div>
+            <h2 id="cur-day" class="text-center today-heading">Thursday</h2>
+            <h2 id="cur-month" class="text-center today-heading">June</h2>
+            <h2 id="cur-date" class="text-center today-heading">30</h2>
+        </div>
+        <div>
+            <button id="theme-landscape" class="button font">Change Theme</button>
+        </div>
+    </div>
+    <!-- 右欄 月曆-->
+    <div id="calendar">
+        <h1 id="app-name-portrait" class="text-center off-color">MyCalendar</h1>
+        <table>
+            <thead class="todayColor">
+                <tr>
+                    <th colspan="7" class="border-color">
+                        <h4 id="cal-year">2022</h4>
+                        <div>
+                            <i class="fas fa-caret-left icon"></i>
+                            <h3 id="cal-month">June</h3>
+                            <i class="fas fa-caret-right icon"></i>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th class="weekday border-color">Sun</th>
+                    <th class="weekday border-color">Mon</th>
+                    <th class="weekday border-color">Tue</th>
+                    <th class="weekday border-color">Wed</th>
+                    <th class="weekday border-color">Thu</th>
+                    <th class="weekday border-color">Fri</th>
+                    <th class="weekday border-color">Sat</th>
+                </tr>
+            </thead>
+            <tbody id="table-body" class="border-color">
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td id="today">1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td class="tooltip">1 <img src="./images/note1.png" alt="note1" class="note"><span>這是提示～</span></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="theme-portrait" class="button font todayColor">Change Theme</button>   
+    </div>
+    <!-- 浮水印 -->
+    <div class="bgtext">
+        <h3 class="background-text off-color ">2022</h3>
+        <h4 class="background-text off-color">Calendar</h4>
+    </div>
+    <dialog id="modal" hidden>
+        <div id="fav-color" hidden>
+            <div class="popup" hidden>
+                <h4 class="text-center">What's your favorite color?</h4>
+                <div id="color-options">
+                    <div class="color-option">
+                        <div class="color-preview" id="Blue" style="background-color:#1B19CD;"><i class="fas fa-check checkmark"></i></div>
+                        <h5>Blue</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="Red" style="background-color:#FF0000;"></div>
+                        <h5>Red</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="LimeGreen" style="background-color:#32CD32;"></div>
+                        <h5>Lime<br>Green</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="Cyan" style="background-color:#00FFFF;"></div>
+                        <h5>Cyan</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="Turquoise" style="background-color:#40E0D0;"></div>
+                        <h5>Turquoise</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="SkyBlue" style="background-color:#87CEEB;"></div>
+                        <h5>SkyBlue</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="LightSkyBlue" style="background-color:#87CEFA;"></div>
+                        <h5>Light<br>SkyBlue</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="DeepSkyBlue" style="background-color:#00BFFF;"></div>
+                        <h5>Deep<br>SkyBlue</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="DodgerBlue" style="background-color:#1E90FF;"></div>
+                        <h5>Dodger<br>Blue</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="Tan" style="background-color:#D2B48C;"></div>
+                        <h5>Tan</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="MediumAquamarine	" style="background-color:#66CDAA;"></div>
+                        <h5>Medium<br>Aquamarine</h5>
+                    </div>
+
+                    <div class="color-option">
+                        <div class="color-preview" id="tomato" style="background-color:#FF6347;"></div>
+                        <h5>Tomato</h5>
+                    </div>
+
+                </div>
+                <button id="update-theme-button" class="button font todayColor">Update</button>
+            </div>
+        </div>
+        <div id="make-note" hidden>
+            <div class="popup">
+                <h4>Add notes to the calendar</h4>
+                <textarea name="post-it" id="edit-post-it" autofocus></textarea>
+                <div>
+                    <button class="button font post-it-button" id="add-post-it">Post</button>
+                    <button class="button font post-it-button" id="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <script src="./js/updateDates.js"></script>
+</body>
+</html>

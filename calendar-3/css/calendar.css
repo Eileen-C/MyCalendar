@@ -1,0 +1,112 @@
+table{
+    margin: 14px auto;
+    padding: 7vh 0;
+    border-collapse: collapse;
+}
+
+table, td, th{
+    border: 1px solid #9C9C9C;
+}
+
+#calendar{
+    width: 66%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#calendar #app-name-portrait{
+    display: none;
+}
+
+#calendar #theme-portrait{
+    display: none;
+}
+
+#calendar thead tr:first-child th div{
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+}
+
+
+.weekday{
+    font-size: 1.7vw;
+    font-weight: 300;
+    padding: 8px 0 5px;
+    border-bottom: 1px solid #FFFFFF !important; 
+}
+
+#calendar tbody td{
+    height: 5.2vw;
+    width: 5.2vw;
+    font-size: 0.8vw;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 0.5vw;
+    transition: font-size .6s ease;
+}
+
+#calendar tbody td:hover{
+    font-size: 1.2vw;
+}
+
+.background-text{
+    position: absolute;
+    opacity: 0.22;
+    font-size: 20vw;
+    z-index: -1;
+    margin: 0;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%,-50%);
+}
+h4.background-text{
+    top: 70%;
+    font-size: 7vw;
+}
+
+#calendar .icon{
+    font-size: 36px;
+}
+
+#calendar .icon:hover{
+    opacity: 0.6;
+}
+
+#today{
+    background-color: #E1E1E1;
+}
+
+#calendar .note{
+    width: 3.8vw;
+    vertical-align: top;
+    position: relative;
+    top: 0.5vw;
+}
+
+.tooltip span{
+    display: none;
+}
+
+.tooltip:hover span{
+    display: block;
+    font-size: 1vw;
+    padding: 6px;
+    white-space: pre-wrap;
+    width: 12vw;
+    z-index: 100;
+    background-color: #EDEDED;
+    color: #000000;
+    border-radius: 5px;
+    position: absolute;
+    left: 2vw;
+    top: 4vw;
+}
+
+.tooltip:hover{
+    cursor: help;
+    position: relative;
+}
