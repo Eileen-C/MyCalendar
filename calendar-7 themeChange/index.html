@@ -34,7 +34,7 @@
             <h2 id="cur-date" class="text-center today-heading">30</h2>
         </div>
         <div>
-            <button id="theme-landscape" class="button font">Change Theme</button>
+            <button id="theme-landscape" class="button font" onclick="openFavColor();">Change Theme</button>
         </div>
     </div>
     <!-- 右欄 月曆-->
@@ -120,81 +120,80 @@
                 </tr>
             </tbody>
         </table>
-        <button id="theme-portrait" class="button font todayColor">Change Theme</button>
+        <button id="theme-portrait" class="button font todayColor" onclick="openFavColor();">Change Theme</button>
     </div>
     <!-- 浮水印 -->
     <div class="bgtext">
         <h3 class="background-text off-color ">2022</h3>
         <h4 class="background-text off-color">Calendar</h4>
     </div>
-    <dialog id="modal" hidden>
+    <dialog id="modal">
         <div id="fav-color" hidden>
-            <div class="popup" hidden>
+            <div class="popup">
                 <h4 class="text-center">What's your favorite color?</h4>
                 <div id="color-options">
                     <div class="color-option">
-                        <div class="color-preview" id="Blue" style="background-color:#1B19CD;"><i
-                                class="fas fa-check checkmark"></i></div>
+                        <div class="color-preview" id="Blue" style="background-color:#1B19CD;" onclick="addCheckMark('Blue');"></div>
                         <h5>Blue</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="Red" style="background-color:#FF0000;"></div>
+                        <div class="color-preview" id="Red" style="background-color:#FF0000;" onclick="addCheckMark('Red');"></div>
                         <h5>Red</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="LimeGreen" style="background-color:#32CD32;"></div>
+                        <div class="color-preview" id="LimeGreen" style="background-color:#32CD32;" onclick="addCheckMark('LimeGreen');"></div>
                         <h5>Lime<br>Green</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="Cyan" style="background-color:#00FFFF;"></div>
+                        <div class="color-preview" id="Cyan" style="background-color:#00FFFF;" onclick="addCheckMark('Cyan');"></div>
                         <h5>Cyan</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="Turquoise" style="background-color:#40E0D0;"></div>
+                        <div class="color-preview" id="Turquoise" style="background-color:#40E0D0;" onclick="addCheckMark('Turquoise');"></div>
                         <h5>Turquoise</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="SkyBlue" style="background-color:#87CEEB;"></div>
+                        <div class="color-preview" id="SkyBlue" style="background-color:#87CEEB;" onclick="addCheckMark('SkyBlue');"></div>
                         <h5>SkyBlue</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="LightSkyBlue" style="background-color:#87CEFA;"></div>
+                        <div class="color-preview" id="LightSkyBlue" style="background-color:#87CEFA;" onclick="addCheckMark('LightSkyBlue');"></div>
                         <h5>Light<br>SkyBlue</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="DeepSkyBlue" style="background-color:#00BFFF;"></div>
+                        <div class="color-preview" id="DeepSkyBlue" style="background-color:#00BFFF;" onclick="addCheckMark('DeepSkyBlue');"></div>
                         <h5>Deep<br>SkyBlue</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="DodgerBlue" style="background-color:#1E90FF;"></div>
+                        <div class="color-preview" id="DodgerBlue" style="background-color:#1E90FF;" onclick="addCheckMark('DodgerBlue');"></div>
                         <h5>Dodger<br>Blue</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="Tan" style="background-color:#D2B48C;"></div>
+                        <div class="color-preview" id="Tan" style="background-color:#D2B48C;" onclick="addCheckMark('Tan');"></div>
                         <h5>Tan</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="MediumAquamarine	" style="background-color:#66CDAA;"></div>
+                        <div class="color-preview" id="MediumAquamarine	" style="background-color:#66CDAA;" onclick="addCheckMark('MediumAquamarine');"></div>
                         <h5>Medium<br>Aquamarine</h5>
                     </div>
 
                     <div class="color-option">
-                        <div class="color-preview" id="tomato" style="background-color:#FF6347;"></div>
+                        <div class="color-preview" id="tomato" style="background-color:#FF6347;" onclick="addCheckMark('tomato');"></div>
                         <h5>Tomato</h5>
                     </div>
 
                 </div>
-                <button id="update-theme-button" class="button font todayColor">Update</button>
+                <button id="update-theme-button" class="button font todayColor" onclick="closeFavColor();">Update</button>
             </div>
         </div>
         <div id="make-note" hidden>
@@ -210,61 +209,9 @@
     </dialog>
     <script src="./js/updateDates.js"></script>
     <script src="./js/renderCalendar.js"></script>
+    <script src="./js/changeThemes.js"></script>
     <script>
-        function fillInMonth(thisYear, thisMonth) {
-            //更新月曆表格標題的年份與月份
-            document.getElementById("cal-year").innerHTML = thisYear;
-            document.getElementById("cal-month").innerHTML = translateToMonthName(thisMonth);
-
-            // 判斷目前月曆表格是否有一個td物件包含'id="today"'，找到後清除該物件裡的id屬性
-            if (document.getElementById("today")) {
-                document.getElementById("today").removeAttribute("id")
-            }
-
-            let firstDateOfThisMonthYear = new Date(thisYear, thisMonth, 1);
-            let startIndex = firstDateOfThisMonthYear.getDay();
-
-            let dates = document.getElementsByTagName("td")
-            //加上今日的id屬性today，只有今年今月才做
-            if (today.getFullYear() == thisYear && today.getMonth() == thisMonth) {
-                dates[startIndex + today.getDate() - 1].setAttribute("id", "today")
-            }
-
-            //每個月的天數
-            let monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-            //閏年
-            if ((thisYear % 4 == 0 && thisYear % 100 != 0) || (thisYear % 400 == 0)) monthDays[1] = 29;
-
-            //今月
-            for (let i = 1; i <= monthDays[thisMonth]; i++, startIndex++) {
-                dates[startIndex].innerHTML = i;
-                dates[startIndex].classList.remove("todayColor")
-            }
-
-            //下月
-            for (i = 1; startIndex < 42; i++, startIndex++) {
-                dates[startIndex].innerHTML = i;
-                dates[startIndex].classList.add("todayColor");
-            }
-
-            //上月
-            startIndex = firstDateOfThisMonthYear.getDay() - 1;
-            let lastMonth = thisMonth - 1;
-            if (lastMonth == -1) lastMonth = 11;
-            i = monthDays[lastMonth];
-            for (; startIndex >= 0; startIndex--, i--) {
-                dates[startIndex].innerHTML = i;
-                dates[startIndex].classList.add("todayColor");
-            }
-        }
-
-        let today = new Date();
-        updateDates();//更新月曆中的日期資料 (年、月、日、週幾)
-
-        let thisYear = today.getFullYear();
-        let thisMonth = today.getMonth();
-        fillInMonth(thisYear, thisMonth);
+        
     </script>
 </body>
 
