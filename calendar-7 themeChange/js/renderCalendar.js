@@ -26,7 +26,8 @@ function fillInMonth(thisYear, thisMonth) {
     //今月
     for (let i = 1; i <= monthDays[thisMonth]; i++, startIndex++) {
         dates[startIndex].innerHTML = i;
-        dates[startIndex].classList.remove("todayColor")
+        dates[startIndex].classList.remove("todayColor");
+        dates[startIndex].style = null;
     }
 
     //下月

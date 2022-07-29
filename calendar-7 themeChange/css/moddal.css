@@ -68,7 +68,7 @@ dialog{
     opacity: 0.7;
 }
 
-.checkmark {
+#fav-color #color-options .checkmark {
     color: white;
     font-size: 2vw;
 }

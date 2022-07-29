@@ -133,7 +133,7 @@
                 <h4 class="text-center">What's your favorite color?</h4>
                 <div id="color-options">
                     <div class="color-option">
-                        <div class="color-preview" id="Blue" style="background-color:#1B19CD;" onclick="addCheckMark('Blue');"></div>
+                        <div class="color-preview" id="Blue" style="background-color:#1B19CD;" onclick="addCheckMark('Blue');"><i class="fa-solid fa-check checkmark"></i></div>
                         <h5>Blue</h5>
                     </div>
 
@@ -193,7 +193,7 @@
                     </div>
 
                 </div>
-                <button id="update-theme-button" class="button font todayColor" onclick="closeFavColor();">Update</button>
+                <button id="update-theme-button" class="button font todayColor" onclick="changeColor();">Update</button>
             </div>
         </div>
         <div id="make-note" hidden>
@@ -210,9 +210,7 @@
     <script src="./js/updateDates.js"></script>
     <script src="./js/renderCalendar.js"></script>
     <script src="./js/changeThemes.js"></script>
-    <script>
-        
-    </script>
+
 </body>
 
 </html>
