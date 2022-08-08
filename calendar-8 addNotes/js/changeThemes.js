@@ -82,9 +82,9 @@ function changeColor() {
 function addCheckMark(todayColor_name) {
     currentColor.name = todayColor_name;
     //清除類別有"checkmark"的元素，也就是清除掉勾選的顯示
-    var checkmarks = document.getElementsByClassName("checkmark");
-    for (let i = 0; i < checkmarks.length; i++) {
-        checkmarks[i].parentNode.removeChild(checkmarks[i]);
+    var checkmark = document.getElementsByClassName("checkmark");
+    for (let i = 0; i < checkmark.length; i++) {
+        checkmark[i].parentNode.removeChild(checkmark[i]);
     }
     //加上勾選的顯示
     var colorPreviews = document.getElementsByClassName("color-preview");

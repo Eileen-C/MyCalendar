@@ -70,8 +70,7 @@
                     <td onclick="dayClicked(this);">1</td>
                     <td onclick="dayClicked(this);">1</td>
                     <td onclick="dayClicked(this);">1</td>
-                    <td onclick="dayClicked(this);" class="tooltip">1 <img src="./images/note1.png" alt="note1"
-                            class="note"><span>這是提示～</span></td>
+                    <td onclick="dayClicked(this);" class="tooltip note">1 <img src="./images/note1.png" alt="note1"><span>這是提示～</span></td>
                     <td onclick="dayClicked(this);">1</td>
                 </tr>
                 <tr>
@@ -224,7 +223,7 @@
     <script src="./js/renderCalendar.js"></script>
     <script src="./js/changeThemes.js"></script>
     <script>
-        function openMakeNote(){
+        function openMakeNote() {
             let modal = document.getElementById("modal");
             modal.open = true;
             let template = document.getElementById("make-note");
@@ -299,11 +298,18 @@
             return Math.floor(Math.random() * (max - min)) + min;
         }
 
+        let today = new Date();
+        updateDates();//更新月曆中的日期資料 (年、月、日、週幾)
+        
         let postIts = [];//記事陣列，用來放置月曆中的記事物件資料
         //current 目前點擊的日期
         let currentPostItID = 0; //目前的記事ID
         let newCurrentPostIt = false; //目前的記事是否為新？即目前點選的日期尚未有任何記事資料
         let currentPostItIndex = 0; //目前的記事在postIts陣列中的位置索引
+
+        let thisYear = today.getFullYear();
+        let thisMonth = today.getMonth();
+        fillInMonth(thisYear, thisMonth);
 
     </script>
 
