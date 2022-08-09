@@ -1,0 +1,18 @@
+#calendar tbody tr td[class*="todayColor"] {
+    border-right: 1px solid white;
+}   
+#calendar tbody tr td[class*="todayColor"]:first-child {
+    border-left-color: inherit;
+}
+#calendar tbody tr td[class*="todayColor"]:last-child {
+    border-right-color: inherit;
+}      
+#calendar tbody tr:last-child td[class*="todayColor"] {
+    border-bottom-color: inherit;
+}      
+#calendar tbody tr:nth-child(5) td[class*="todayColor"] {
+    border-bottom-color: white;
+}
+#calendar tbody tr td[class*="prev-month-last-day"] {
+    border-right: 1px solid #9C9C9C !important;
+}
